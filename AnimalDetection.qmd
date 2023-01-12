@@ -11,6 +11,15 @@ Markdown is an easy to read and write text format:
 - It can be **rendered** into HTML, PDF, and more
 - Learn more at: <https://quarto.org/docs/authoring/>
 
+## Background
+
+Image detection and classification is important in a multitude of areas, from determining if a dollar bill is real or counterfeit to identifying cells in our body as benign or cancerous to telling apart a cat from a dog.
+![Example of Image Detection](animals.png)
+
+## Research
+
+This is our research section.
+
 ## Code Cell
 
 Here is a Python code cell:
