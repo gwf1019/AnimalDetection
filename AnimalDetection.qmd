@@ -1,5 +1,5 @@
 ---
-title: "Hello, Quarto"
+title: "Animal Detection"
 format: html
 ---
 
