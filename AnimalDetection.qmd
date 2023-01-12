@@ -25,60 +25,6 @@ This is our research section.
 Here is a Python code cell:
 
 ```{python}
-import PIL
-from PIL import Image
-import numpy as np
-import os
-import cv2
-import random
-
-random.seed(42)
-data=[]
-labels=[]
-
-butterflies=os.listdir("butterflies")
-for butterfly in butterflies:
-    imag=cv2.imread("butterflies/"+butterfly)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(0)
-horses=os.listdir("horses")
-for horse in horses:
-    imag=cv2.imread("horses/"+horse)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(1)
-    
-elephants=os.listdir("elephants")
-for elephant in elephants:
-    imag=cv2.imread("elephants/"+elephant)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(2)
-chickens=os.listdir("chickens")
-for chicken in chickens:
-    imag=cv2.imread("chickens/"+chicken)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(3)
-spiders=os.listdir("spiders")
-for spider in spiders:
-    imag=cv2.imread("spiders/"+spider)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(4)
-squirrels=os.listdir("squirrels")
-for squirrels in squirrels:
-    imag=cv2.imread("squirrels/"+squirrels)
-    img_from_ar = Image.fromarray(imag, 'RGB')
-    resized_image = img_from_ar.resize((150, 150))
-    data.append(np.array(resized_image))
-    labels.append(5)
 
 ```
 
