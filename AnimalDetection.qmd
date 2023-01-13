@@ -105,6 +105,12 @@ Reasons our model did not perform well:
 
 - Lack of regularization: Regularization techniques such as dropout, L1, and L2 regularization can help prevent overfitting by adding a penalty to the model for having too many parameters.
 
+::: {layout-ncol=2 layout-valign="bottom"}
+![](AccuracyOurs.png)
+
+![](LossOurs.png)
+:::
+
 Reasons VGG16 performs well:
 
 - Deep architecture: VGG16 is a very deep model, with 16 layers, which allows it to learn a complex set of features from the input images. This depth enables the model to extract high-level features from the images, such as edges and shapes, which are important for image classification.
@@ -120,6 +126,12 @@ Reasons VGG16 performs well:
 VGG16 just does a much better job in detecting features especially since it has seen millions of similiar photos to ours.
 
 The metric we will be using to evaluate our model is the accuracy.
+
+::: {layout-ncol=2 layout-valign="bottom"}
+![](Accuracy.png)
+
+![](Loss.png)
+:::
 
 ## Conclusion
 
