@@ -27,7 +27,7 @@ Can we build a model that succesfully classifies the images of animals?
 
 ## Exploratory Data Analysis
 
-Our data is composed of 7 classes with over 1000 images
+Our data is composed of 8 classes with over 1000 images
 
 - Dogs
 - Elephants
@@ -46,7 +46,7 @@ Our data is composed of 7 classes with over 1000 images
 
 - All labels were then one hot encoded.
 
-- We then used a 75% traning set , 15% validation set , and 10% set split.
+- We then used a 75% traning set , 15% validation set , and 10% test split.
 
 
 ## Methods
@@ -81,6 +81,11 @@ The model is trained on the ImageNet dataset, which contains millions of images 
 As seen in the table below the pretrain VGG model was able to perform significanlty better than our own model. In practice using pretrained models is the way to go and makes life so much easier.
 
 
+
+
+
+
+
 ```{python}
 import pandas as pd
 data = {'Model': ['Team 6 CNN', 'VGG16'],
@@ -93,6 +98,11 @@ df=pd.DataFrame(data)
 
 print(df)
 ```
+
+
+
+
+
 
 
 Reasons our model did not perform well:
@@ -157,7 +167,7 @@ CNNs have the potential to revolutionize many industries and improve the lives o
 
 Our own model was very weak so maybe improving that could help. We can do this by adding much more images and more classes of animals.
 
-As for out VGG16 model optimizing it by adding more images as well will help increase the accuracy and looking into other pretrained CNN models to use.
+As for our VGG16 model optimizing it by adding more images as well will help increase the accuracy and looking into other pretrained CNN models to use.
 
 ## Sources
 
