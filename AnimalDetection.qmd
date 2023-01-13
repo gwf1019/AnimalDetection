@@ -23,7 +23,11 @@ With the increasing amount of visual data being generated and the advancement of
 
 Can we build a model that succesfully classifies the images of animals?
 
-## Explotory Data Analysis
+## Our Data
+
+Our data consisted of unstructured image sets of 6 classes - butterflies, elephants, chickens, horses, and squirrels. We transformed these into an array to use in our model.
+
+## Exploratory Data Analysis
 
 Here is a Python code cell:
 
