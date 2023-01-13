@@ -17,7 +17,7 @@ The importance of image classification stems from its ability to enable machines
 
 With the increasing amount of visual data being generated and the advancement of deep learning techniques, the field of image classification has seen significant progress in recent years. This has led to the development of highly accurate image classifiers that can be trained on large datasets, and are able to generalize well to new images.
 
-![](animals.png){height=300}
+![](animals.png){fig-align="center"}
 
 ## Question
 
