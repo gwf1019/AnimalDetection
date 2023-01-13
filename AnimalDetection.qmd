@@ -38,6 +38,16 @@ Our data is composed of 7 classes with over 1000 images
 - Butterflies
 - Horses
 
+### Data Cleaning and Preparing for Model
+
+- Each Image was resized to 150x150 
+
+- All the images were then given their own label , and converted into an array
+
+- All labels were then one hot encoded.
+
+- We then used a 75% traning set , 15% validation set , and 10% set split.
+
 
 ## Methods
 
