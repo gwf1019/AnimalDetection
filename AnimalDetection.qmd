@@ -1,7 +1,12 @@
 ---
 title: "Animal Detection"
 format: html
+backgroundcolor: coral
+fontsize: s
 ---
+Presentation by: Chris, Grant, Will
+
+![](paws.png){fig-align="right"}
 
 ## Markdown
 
@@ -11,14 +16,15 @@ Markdown is an easy to read and write text format:
 - It can be **rendered** into HTML, PDF, and more
 - Learn more at: <https://quarto.org/docs/authoring/>
 
-## Background
+## Our Topic
 
 Image detection and classification is important in a multitude of areas, from determining if a dollar bill is real or counterfeit to identifying cells in our body as benign or cancerous to telling apart a cat from a dog.
-![Example of Image Detection](animals.png)
 
-## Research
+![](animals.png){width=350}
 
-This is our research section.
+## Our Goal
+
+We used unstructured data containing hundreds of images from the following 6 animals. We ultimately hope to be able to develop a model which accurately detects and classifies each of these animals.
 
 ## Code Cell
 
