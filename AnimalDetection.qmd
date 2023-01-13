@@ -20,11 +20,11 @@ The importance of image classification stems from its ability to enable machines
 With the increasing amount of visual data being generated and the advancement of deep learning techniques, the field of image classification has seen significant progress in recent years. This has led to the development of highly accurate image classifiers that can be trained on large datasets, and are able to generalize well to new images.
 ![Example of Image Detection](animals.png)
 
-## Research
+## Question
 
-This is our research section.
+Can we build a model that succesfully classifies the images of animals?
 
-## Code Cell
+## Explotory Data Analysis
 
 Here is a Python code cell:
 
@@ -37,6 +37,22 @@ Here is a Python code cell:
 Our own CNN model
 
 VGG16 model (CNN)
+
+## Evaluation
+```{python}
+import pandas as pd
+data = {'Model': ['Team 6 CNN', 'VGG16'],
+        'Train': ['99%','97.7%'],
+        'Validation': ['40%','97.7%'],
+        'Test': ['32.2%','91.2%']
+        }
+
+df=pd.DataFrame(data)
+
+print(df.to_markdown())
+
+```
+
 ## Sources
 
 Very Deep Convolutional Networks for Large-Scale Image Recognition, K. Simonyan and A. Zisserman. arXiv:1409.1556.
