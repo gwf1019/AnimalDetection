@@ -29,10 +29,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="AnimalDetection_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="AnimalDetection_files/libs/quarto-html/anchor.min.js"></script>
 <link href="AnimalDetection_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="AnimalDetection_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="AnimalDetection_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="AnimalDetection_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="AnimalDetection_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="AnimalDetection_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="AnimalDetection_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 
 
 </head>
@@ -61,13 +61,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Presentation by: Chris, Grant, Will</p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="paws.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<section id="our-topic" class="level2">
-<h2 class="anchored" data-anchor-id="our-topic">Our Topic</h2>
+<p><img src="paws.png" height="350"></p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>Image classification is the process of assigning a label or class to an input image based on its visual content. It is a fundamental task in the field of computer vision and has a wide range of applications, including object recognition, face detection, self-driving cars, and medical imaging.</p>
 <p>The importance of image classification stems from its ability to enable machines to understand and interpret the visual world in the same way that humans do. This capability can be used to automate various tasks, such as identifying objects in an image, detecting and diagnosing diseases in medical images, and enabling self-driving cars to navigate safely. Additionally, image classification can be used to improve the accuracy of other computer vision tasks, such as object detection and segmentation.</p>
 <p>With the increasing amount of visual data being generated and the advancement of deep learning techniques, the field of image classification has seen significant progress in recent years. This has led to the development of highly accurate image classifiers that can be trained on large datasets, and are able to generalize well to new images.</p>
@@ -81,21 +77,61 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="question">Question</h2>
 <p>Can we build a model that succesfully classifies the images of animals?</p>
 </section>
-<section id="our-data" class="level2">
-<h2 class="anchored" data-anchor-id="our-data">Our Data</h2>
-<p>Our data consisted of unstructured image sets of 6 classes - butterflies, elephants, chickens, horses, and squirrels. We transformed these into an array to use in our model.</p>
-</section>
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
-<p>Here is a Python code cell:</p>
+<p>Our data is composed of 7 classes with over 1000 images</p>
+<ul>
+<li>Dogs</li>
+<li>Elephants</li>
+<li>Spiders</li>
+<li>Chickens</li>
+<li>Squirrels</li>
+<li>Wolves</li>
+<li>Butterflies</li>
+<li>Horses</li>
+</ul>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
-<p>Our own CNN model</p>
+<p>CNN</p>
+<p>A convolutional neural network (CNN) is a type of deep learning model that is commonly used for image and video analysis. It is called “convolutional” because it uses a technique called convolution to analyze the data. In a CNN, the model learns to recognize patterns and features in images by analyzing small sections (or “patches”) of the image at a time, and then combining the information from these patches to understand the overall image. This makes CNNs well-suited for tasks such as image classification, object detection, and image segmentation.</p>
 <p>VGG16 model (CNN)</p>
+<ul>
+<li>13 convolutional layers</li>
+<li>5 max pooling layers</li>
+<li>3 fully connected layers</li>
+<li>GlobalAveragePooling2D() layer</li>
+<li>Dropout(0.2) layer</li>
+<li>Dense(1024, activation=‘relu’) layer</li>
+<li>Dropout(0.2) layer</li>
+<li>Dense(6, activation=‘softmax’) layer as the final output layer.</li>
+</ul>
+<p>So in total, it’s 13 convolutional layers, 5 max pooling layers, 3 dense layers and 2 dropout layers.</p>
+<p>The model is trained on the ImageNet dataset, which contains millions of images and thousands of object categories. Because of this, the model has learned rich feature representations for a wide variety of image-based tasks.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="CNN.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Convolutional Neural Network (CNN)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="VGG16.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">VGG16 Model</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p>As seen in the table below the pretrain VGG model was able to perform significanlty better than our own model. In practice using pretrained models is the way to go and makes life so much easier.</p>
 <div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>        Model  Train Validation   Test
@@ -103,6 +139,37 @@ ul.task-list li input[type="checkbox"] {
 1       VGG16  97.7%      97.7%  91.2%</code></pre>
 </div>
 </div>
+<p>Reasons our model did not perform well:</p>
+<ul>
+<li><p>Lack of sufficient data: With a small dataset, the model may learn to memorize the training data, which can lead to overfitting.</p></li>
+<li><p>Complex architecture: A complex model with a large number of parameters may have the capacity to memorize the training data, which can lead to overfitting.</p></li>
+<li><p>High learning rate: A high learning rate can cause the model to quickly adapt to the training data, which can lead to overfitting if the model does not have time to converge.</p></li>
+<li><p>Lack of regularization: Regularization techniques such as dropout, L1, and L2 regularization can help prevent overfitting by adding a penalty to the model for having too many parameters.</p></li>
+</ul>
+<p>Reasons VGG16 performs well:</p>
+<ul>
+<li><p>Deep architecture: VGG16 is a very deep model, with 16 layers, which allows it to learn a complex set of features from the input images. This depth enables the model to extract high-level features from the images, such as edges and shapes, which are important for image classification.</p></li>
+<li><p>Small convolutional filters: VGG16 uses small convolutional filters (3x3) which enables the model to learn a large number of feature maps. This makes the model more expressive and able to capture fine-grained details in the images.</p></li>
+<li><p>Max pooling: VGG16 uses max pooling layers which reduces the spatial dimension of the feature maps, making the model more robust to small translations of the objects in the images.</p></li>
+<li><p>Large number of parameters: VGG16 has a large number of parameters, which enables it to learn a complex set of features from the images.</p></li>
+<li><p>Pre-training: VGG16 was pre-trained on a large dataset (ImageNet), which means that it has already learned many useful features that can be used for other tasks.</p></li>
+<li><p>ReLU activation: ReLU activation function is used in the model, which allows the network to learn non-linear decision boundaries, which helps to improve the performance of the model. VGG16 just does a much better job in detecting features especially since it has seen millions of similiar photos to ours.</p></li>
+</ul>
+<p>The metric we will be using to evaluate our model is the accuracy.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>We were able to succesfully build a model that classifies animals. We achieved this through a VGG16 model that performed at a 91% accuracy compared to ours that did 30%. This is a 61% difference and 200% increase. Thus our model was two-times better.</p>
+<p>CNN models are changing the world in many aspects including:</p>
+<ul>
+<li><p>Computer Vision: CNNS are used in a wide range of applications such as object detection, image classification, and image segmentation. These models are used in self-driving cars, security systems, and robotics.</p></li>
+<li><p>Medical imaging: CNNs are used in medical imaging to improve the accuracy of diagnoses and to detect diseases such as cancer and heart disease.</p></li>
+<li><p>Natural Language Processing: CNNs are used in natural language processing (NLP) to analyze text and speech, which has applications in language translation, text summarization, and sentiment analysis.</p></li>
+<li><p>Recommender systems: CNNs are used in recommender systems to make personalized recommendations to users based on their past behavior and preferences.</p></li>
+<li><p>Generative models: CNNs are used to generate new images, videos and audio, which have applications in art, entertainment, and communication.</p></li>
+<li><p>Robotics: CNNs are used in robotics to help the robots understand and interact with their environment, they can be used for tasks such as grasping and manipulation.</p></li>
+</ul>
+<p>CNNs have the potential to revolutionize many industries and improve the lives of many people by making tasks more efficient, accurate and faster. However, it’s important to keep in mind that these models are not perfect and may have limitations and biases, and it’s important to address these issues to ensure fair and ethical use of these models.</p>
 </section>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
