@@ -13,7 +13,11 @@ Markdown is an easy to read and write text format:
 
 ## Background
 
-Image detection and classification is important in a multitude of areas, from determining if a dollar bill is real or counterfeit to identifying cells in our body as benign or cancerous to telling apart a cat from a dog.
+Image classification is the process of assigning a label or class to an input image based on its visual content. It is a fundamental task in the field of computer vision and has a wide range of applications, including object recognition, face detection, self-driving cars, and medical imaging.
+
+The importance of image classification stems from its ability to enable machines to understand and interpret the visual world in the same way that humans do. This capability can be used to automate various tasks, such as identifying objects in an image, detecting and diagnosing diseases in medical images, and enabling self-driving cars to navigate safely. Additionally, image classification can be used to improve the accuracy of other computer vision tasks, such as object detection and segmentation.
+
+With the increasing amount of visual data being generated and the advancement of deep learning techniques, the field of image classification has seen significant progress in recent years. This has led to the development of highly accurate image classifiers that can be trained on large datasets, and are able to generalize well to new images.
 ![Example of Image Detection](animals.png)
 
 ## Research
@@ -28,10 +32,15 @@ Here is a Python code cell:
 
 ```
 
-## Equation
+## Methods
 
-Use LaTeX to write equations:
+Our own CNN model
 
-$$
-\chi' = \sum_{i=1}^n k_i s_i^2
-$$
+VGG16 model (CNN)
+## Sources
+
+Very Deep Convolutional Networks for Large-Scale Image Recognition, K. Simonyan and A. Zisserman. arXiv:1409.1556.
+https://neurohive.io/en/popular-networks/vgg16/
+https://arxiv.org/abs/1409.1556
+https://www.robots.ox.ac.uk/~vgg/research/very_deep/
+https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg16.py
