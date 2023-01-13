@@ -97,7 +97,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="AnimalDetection_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="AnimalDetection_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -124,46 +123,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="markdown" class="level2">
-<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
-<p>Markdown is an easy to read and write text format:</p>
-<ul>
-<li>It’s <em>plain text</em> so works well with version control</li>
-<li>It can be <strong>rendered</strong> into HTML, PDF, and more</li>
-<li>Learn more at: <a href="https://quarto.org/docs/authoring/" class="uri">https://quarto.org/docs/authoring/</a></li>
-</ul>
-</section>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>We want to</p>
-</section>
-<section id="research" class="level2">
-<h2 class="anchored" data-anchor-id="research">Research</h2>
-<p>This is our research section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="animals.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Example of Image Detection</figcaption><p></p>
 </figure>
 </div>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>Image classification is the process of assigning a label or class to an input image based on its visual content. It is a fundamental task in the field of computer vision and has a wide range of applications, including object recognition, face detection, self-driving cars, and medical imaging.</p>
+<p>The importance of image classification stems from its ability to enable machines to understand and interpret the visual world in the same way that humans do. This capability can be used to automate various tasks, such as identifying objects in an image, detecting and diagnosing diseases in medical images, and enabling self-driving cars to navigate safely. Additionally, image classification can be used to improve the accuracy of other computer vision tasks, such as object detection and segmentation.</p>
+<p>With the increasing amount of visual data being generated and the advancement of deep learning techniques, the field of image classification has seen significant progress in recent years. This has led to the development of highly accurate image classifiers that can be trained on large datasets, and are able to generalize well to new images.</p>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p>Can we build a model that succesfully classifies the images of animals?</p>
 </section>
-<section id="code-cell" class="level2">
-<h2 class="anchored" data-anchor-id="code-cell">Code Cell</h2>
-<p>Here is a Python code cell:</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>os.cpu_count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>12</code></pre>
+<section id="explotory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="explotory-data-analysis">Explotory Data Analysis</h2>
+<p>Our data is composed of 7 classes with over 1000 images</p>
+<ul>
+<li>Dogs</li>
+<li>Elephants</li>
+<li>Spiders</li>
+<li>Chickens</li>
+<li>Squirrels</li>
+<li>Wolves</li>
+<li>Butterflies</li>
+<li>Horses</li>
+</ul>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>-Our own CNN model</p>
+<p>VGG16 model (CNN)</p>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Model'</span>: [<span class="st">'Team 6 CNN'</span>, <span class="st">'VGG16'</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Train'</span>: [<span class="st">'99%'</span>,<span class="st">'97.7%'</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Validation'</span>: [<span class="st">'40%'</span>,<span class="st">'97.7%'</span>],</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Test'</span>: [<span class="st">'32.2%'</span>,<span class="st">'91.2%'</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.DataFrame(data)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.to_markdown())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>|    | Model      | Train   | Validation   | Test   |
+|---:|:-----------|:--------|:-------------|:-------|
+|  0 | Team 6 CNN | 99%     | 40%          | 32.2%  |
+|  1 | VGG16      | 97.7%   | 97.7%        | 91.2%  |</code></pre>
 </div>
 </div>
 </section>
-<section id="equation" class="level2">
-<h2 class="anchored" data-anchor-id="equation">Equation</h2>
-<p>Use LaTeX to write equations:</p>
-<p><span class="math display">\[
-\chi' = \sum_{i=1}^n k_i s_i^2
-\]</span></p>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p>Very Deep Convolutional Networks for Large-Scale Image Recognition, K. Simonyan and A. Zisserman. arXiv:1409.1556. https://neurohive.io/en/popular-networks/vgg16/ https://arxiv.org/abs/1409.1556 https://www.robots.ox.ac.uk/~vgg/research/very_deep/ https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg16.py</p>
+</section>
 </section>
 
 </main>
